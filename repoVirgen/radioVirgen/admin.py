@@ -1,7 +1,6 @@
 from django.contrib import admin
 
-from repoVirgen.radioVirgen.models import Programa, Podcast, Autor, AutorPodcast, Usuario, Reproduccion, \
-    ListaPodcastPendientes, LikePrograma, LikePodcast
+from .models import Programa, Podcast, Autor, AutorPodcast, Usuario, Reproduccion, ListaPodcastPendientes, LikePrograma, LikePodcast
 
 # Register your models here.
 admin.site.register(Programa)

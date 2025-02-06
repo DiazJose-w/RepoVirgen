@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5742442f-5394-4242-8c9c-e8022e578baa" name="Changes" comment="Reorganización">
-      <change afterPath="$PROJECT_DIR$/repoVirgen/radioVirgen/management/commands/addProgramas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/RepoVirgen.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RepoVirgen.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repoVirgen/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/repoVirgen/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repoVirgen/projectVirgen/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/repoVirgen/projectVirgen/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/repoVirgen/radioVirgen/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/repoVirgen/radioVirgen/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repoVirgen/radioVirgen/management/commands/addProgramas.py" beforeDir="false" afterPath="$PROJECT_DIR$/repoVirgen/radioVirgen/management/commands/addProgramas.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
