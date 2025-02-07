@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5742442f-5394-4242-8c9c-e8022e578baa" name="Changes" comment="Reorganización">
-      <change beforePath="$PROJECT_DIR$/repoVirgen/radioVirgen/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/repoVirgen/radioVirgen/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +45,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop",
+    "git-widget-placeholder": "JoseP",
     "last_opened_file_path": "C:/Users/infci/PycharmProjects/RepoVirgen/repoVirgen"
   }
 }]]></component>
