@@ -1,5 +1,6 @@
-from datetime import timedelta
-from random import random
+import datetime
+from datetime import datetime, timedelta
+import random
 from django.core.management import BaseCommand
 from faker import Faker
 
@@ -10,18 +11,22 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         faker = Faker()
-
         try:
             if not Programa.objects.exists():
-                for i in range(1, 300):
+                for i in range(1, 301):
                     fecha_aleatoria = faker.date_time_between(start_date='-5y', end_date='now')
-                    if random.random() < 0.5:  # 50% de probabilidad de tener fecha de baja
-                        fecha_ale_baja = fecha_aleatoria + timedelta(
-                            days=random.randint(30, 365 * 5))  # Mínimo 1 mes después, máximo 5 años después
+                    probabilidad = random.randint(1, 2)
+
+                    if probabilidad == 1:
+                        fecha_ale_baja = (fecha_aleatoria +
+                                          timedelta(days=random.randint(30, 365 * 5)))
+
+                        if fecha_ale_baja > datetime.now():
+                            fecha_ale_baja =  None
                     else:
                         fecha_ale_baja = None
 
-                    fecha_formateada = fecha_aleatoria.strftime('%Y-%,-%d')
+                    fecha_formateada = fecha_aleatoria.strftime('%Y-%m-%d')
 
                     Programa.objects.create(nombre=faker.sentence(nb_words=3),
                                             descripcion=faker.sentence(nb_words=10),

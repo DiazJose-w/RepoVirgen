@@ -1,8 +1,4 @@
 from django.db import models
-from django.db.models import Q
-
-
-# Create your models here.
 
 class Programa(models.Model):
     nombre = models.CharField(max_length=80, unique=True)
@@ -19,7 +15,7 @@ class Podcast(models.Model):
     categoria = models.CharField(max_length=50)
     fecha_alta = models.DateField(null=True, blank=True)
     fecha_baja = models.DateField(null=True, blank=True)
-    programa = models.ForeignKey(Programa, on_delete=models.CASCADE, related_name="episodios")
+    programa = models.ForeignKey(Programa, on_delete=models.CASCADE, related_name="podcast")
     link_drive = models.CharField(max_length=255)
 
     def __str__(self):
@@ -43,8 +39,8 @@ class Autor(models.Model):
         return f'Autor ${self.nombre} ${self.apellido}'
 
 class AutorPodcast(models.Model):
-    autor = models.ForeignKey(Autor, on_delete=models.CASCADE, related_name="podcasts")
-    podcast = models.ForeignKey(Podcast, on_delete=models.CASCADE, related_name="autores")
+    autor = models.ForeignKey(Autor, on_delete=models.CASCADE, related_name="podcastAutores")
+    podcast = models.ForeignKey(Podcast, on_delete=models.CASCADE, related_name="autoresPodcast")
 
     def __str__(self):
         return f'Autor ${self.autor} hace podcast ${self.podcast}'
@@ -59,30 +55,30 @@ class Usuario(models.Model):
         return f'Nombre: {self.nombre}\n Nick: {self.nick}'
 
 class Reproduccion(models.Model):
-    usuario= models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='usuario')
-    podcast = models.ForeignKey(Podcast, on_delete=models.CASCADE, related_name='podcast')
+    usuario= models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='usuarioReproduccion')
+    podcast = models.ForeignKey(Podcast, on_delete=models.CASCADE, related_name='podcastReproduccion')
 
     def _str_(self):
         return f'Podcast ${self.podcast} reproducido por {self.usuario}'
 
 class ListaPodcastPendientes(models.Model):
-    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='usuario')
-    programa = models.ForeignKey(Programa, on_delete=models.CASCADE, related_name='programa')
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='usuarioPendientes')
+    programa = models.ForeignKey(Programa, on_delete=models.CASCADE, related_name='programaPendientes')
 
     def _str_(self):
         return f'Usuario {self.usuario}, progrma {self.programa}'
 
 class LikePrograma(models.Model):
-    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='usuario')
-    programa = models.ForeignKey(Programa, on_delete=models.CASCADE, related_name='programa')
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='usuarioLikePro')
+    programa = models.ForeignKey(Programa, on_delete=models.CASCADE, related_name='programaLike')
 
     def _str_(self):
         return f'Usuario {self.usuario} programa {self.programa}'
 
 
 class LikePodcast(models.Model):
-    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='usuario')
-    podcast = models.ForeignKey(Podcast, on_delete=models.CASCADE, related_name='podcast')
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='usuarioLikePod')
+    podcast = models.ForeignKey(Podcast, on_delete=models.CASCADE, related_name='podcastLike')
 
     def _str_(self):
         return f'Usuario {self.usuario} podcast {self.podcast}'
