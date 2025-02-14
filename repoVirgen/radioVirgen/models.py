@@ -7,7 +7,7 @@ class Programa(models.Model):
     fecha_baja = models.DateField(null=True, blank=True)
 
     def __str__(self):
-        return f'Programa ${self.nombre}'
+        return f'Programa manage{self.nombre}'
 
 class Podcast(models.Model):
     nombre = models.CharField(max_length=80)
@@ -19,7 +19,7 @@ class Podcast(models.Model):
     link_drive = models.CharField(max_length=255)
 
     def __str__(self):
-        return f'Podcast ${self.nombre}'
+        return f'Podcast {self.nombre}'
 
     class Meta:
         constraints = [
@@ -36,14 +36,14 @@ class Autor(models.Model):
     programa = models.ForeignKey(Programa, on_delete=models.CASCADE, related_name="autores")
 
     def __str__(self):
-        return f'Autor ${self.nombre} ${self.apellido}'
+        return f'Autor: {self.nombre} {self.apellido}'
 
 class AutorPodcast(models.Model):
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE, related_name="podcastAutores")
     podcast = models.ForeignKey(Podcast, on_delete=models.CASCADE, related_name="autoresPodcast")
 
     def __str__(self):
-        return f'Autor ${self.autor} hace podcast ${self.podcast}'
+        return f'Autor {self.autor} hace podcast {self.podcast}'
 
 class Usuario(models.Model):
     nombre = models.CharField(max_length=100)

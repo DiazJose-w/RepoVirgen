@@ -12,15 +12,15 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         faker = Faker()
-        probabilidad = random.random()
-
+        categoriasPd= ["Educativo", "Comedia", "Formación"]
         try:
             if not Podcast.objects.exists():
                 for i in range(1, 300):
                     programas= Programa.objects.all()
-
                     fecha_aleatoria = faker.date_time_between(start_date='-5y', end_date='now')
-                    if probabilidad < 0.5:
+                    probabilidad = random.randint(1, 2)
+
+                    if probabilidad == 1:
                         fecha_ale_baja = fecha_aleatoria + timedelta(
                             days=random.randint(30, 365 * 5))  # Mínimo 1 mes después, máximo 5 años después
                     else:
@@ -30,10 +30,11 @@ class Command(BaseCommand):
 
                     Podcast.objects.create(nombre=faker.sentence(nb_words=3),
                                            descripcion=faker.sentence(nb_words=10),
+                                           categoria=random.choice(categoriasPd),
                                            fecha_alta=fecha_formateada,
                                            fecha_baja=fecha_ale_baja,
                                            programa=random.choice(programas),
-                                           #Pensar como añadir el linkDrive
+                                           link_drive=faker.url()
                                            )
                     self.stdout.write(self.style.SUCCESS('Podcast añadido con éxito'))
             else:
