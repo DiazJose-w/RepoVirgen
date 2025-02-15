@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5742442f-5394-4242-8c9c-e8022e578baa" name="Changes" comment="Reorganización">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/RepoVirgen.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RepoVirgen.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/repoVirgen/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/repoVirgen/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/repoVirgen/projectVirgen/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/repoVirgen/projectVirgen/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/repoVirgen/radioVirgen/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/repoVirgen/radioVirgen/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/repoVirgen/radioVirgen/management/commands/addProgramas.py" beforeDir="false" afterPath="$PROJECT_DIR$/repoVirgen/radioVirgen/management/commands/addProgramas.py" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/repoVirgen/radioVirgen/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/repoVirgen/radioVirgen/models.py" afterDir="false" />
+>>>>>>> bed63c8eb1d6eae772beae11e1e0037013d5d8a3
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,11 +51,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;feature/JoseDiaz&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/MSI/Desktop/DAM 2/5. SGE/Tema 6/Trabajo Entrega/RepoVirgen&quot;
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "develop",
+    "last_opened_file_path": "C:/Users/infci/PycharmProjects/RepoVirgen/repoVirgen"
+>>>>>>> bed63c8eb1d6eae772beae11e1e0037013d5d8a3
   }
 }</component>
   <component name="RecentsManager">

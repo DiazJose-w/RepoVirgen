@@ -45,34 +45,35 @@ class AutorPodcast(models.Model):
     def __str__(self):
         return f'Autor {self.autor} hace podcast {self.podcast}'
 
+
 class Usuario(models.Model):
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100)
     nick = models.CharField(max_length=100, unique=True)
     fecha_nac = models.DateField(null=True, blank=True)
 
-    def _str_(self):
+    def str(self):
         return f'Nombre: {self.nombre}\n Nick: {self.nick}'
 
 class Reproduccion(models.Model):
     usuario= models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='usuarioReproduccion')
     podcast = models.ForeignKey(Podcast, on_delete=models.CASCADE, related_name='podcastReproduccion')
 
-    def _str_(self):
+    def str(self):
         return f'Podcast ${self.podcast} reproducido por {self.usuario}'
 
 class ListaPodcastPendientes(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='usuarioPendientes')
     programa = models.ForeignKey(Programa, on_delete=models.CASCADE, related_name='programaPendientes')
 
-    def _str_(self):
+    def str(self):
         return f'Usuario {self.usuario}, progrma {self.programa}'
 
 class LikePrograma(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='usuarioLikePro')
     programa = models.ForeignKey(Programa, on_delete=models.CASCADE, related_name='programaLike')
 
-    def _str_(self):
+    def str(self):
         return f'Usuario {self.usuario} programa {self.programa}'
 
 
@@ -80,5 +81,5 @@ class LikePodcast(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='usuarioLikePod')
     podcast = models.ForeignKey(Podcast, on_delete=models.CASCADE, related_name='podcastLike')
 
-    def _str_(self):
+    def str(self):
         return f'Usuario {self.usuario} podcast {self.podcast}'
