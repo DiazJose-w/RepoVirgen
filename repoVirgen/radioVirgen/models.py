@@ -64,7 +64,7 @@ class Reproduccion(models.Model):
 
 class ListaPodcastPendientes(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='usuarioPendientes')
-    programa = models.ForeignKey(Programa, on_delete=models.CASCADE, related_name='programaPendientes')
+    podcast = models.ForeignKey(Podcast, on_delete=models.CASCADE, related_name='podcastPendientes')
 
     def str(self):
         return f'Usuario {self.usuario}, progrma {self.programa}'
