@@ -28,7 +28,7 @@ class Command(BaseCommand):
         try:
             usuario = Usuario.objects.filter(nick=nick)
             podcast = Podcast.objects.filter(nombre=pod)
-            if not nick or not podcast:
+            if not nick or not pod:
                 self.stdout.write(self.style.WARNING('Debes indicar nick y podcast'))
             else:
                 if not usuario.exists():
