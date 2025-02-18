@@ -67,7 +67,7 @@ class ListaPodcastPendientes(models.Model):
     podcast = models.ForeignKey(Podcast, on_delete=models.CASCADE, related_name='podcastPendientes')
 
     def __str__(self):
-        return f'Usuario {self.usuario}, progrma {self.programa}'
+        return f'Usuario {self.usuario}, progrma {self.podcast}'
 
 class LikePrograma(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='usuarioLikePro')
