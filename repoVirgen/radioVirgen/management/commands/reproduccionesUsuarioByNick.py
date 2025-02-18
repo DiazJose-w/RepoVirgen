@@ -2,6 +2,8 @@ from django.core.management.base import BaseCommand
 from repoVirgen.radioVirgen.models import *
 from django.db.utils import DatabaseError, OperationalError
 
+from radioVirgen.models import Reproduccion
+
 
 class Command(BaseCommand):
     help = 'Buscar reproducciones de usuario por nick'

@@ -2,7 +2,7 @@ import random
 from django.core.management import BaseCommand
 from radioVirgen.models import Usuario, Podcast, Programa, Reproduccion, LikePrograma, LikePodcast, ListaPodcastPendientes
 
-class addReproducciones(BaseCommand):
+class Command(BaseCommand):
     help = 'Añadir reproducciones de usuarios en podcasts'
 
     def handle(self, *args, **kwargs):
