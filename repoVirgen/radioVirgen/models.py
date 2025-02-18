@@ -62,7 +62,7 @@ class Reproduccion(models.Model):
     def str(self):
         return f'Podcast ${self.podcast} reproducido por {self.usuario}'
 
-class ListaPodcastPendientes(models.Model):
+class ListaultimoPodcastPendientes(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='usuarioPendientes')
     podcast = models.ForeignKey(Podcast, on_delete=models.CASCADE, related_name='podcastPendientes')
 
