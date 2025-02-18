@@ -1,6 +1,6 @@
 import random
 from django.core.management import BaseCommand
-from radioVirgen.models import Usuario, Podcast, Programa, Reproduccion, LikePrograma, LikePodcast, ListaPodcastPendientes
+from radioVirgen.models import Usuario, Podcast, Programa, Reproduccion, LikePrograma, LikePodcast
 
 class Command(BaseCommand):
     help = 'Añadir likes de usuarios a programas'
