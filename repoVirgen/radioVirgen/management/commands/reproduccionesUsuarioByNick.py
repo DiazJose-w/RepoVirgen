@@ -1,5 +1,4 @@
 from django.core.management.base import BaseCommand
-from repoVirgen.radioVirgen.models import *
 from django.db.utils import DatabaseError, OperationalError
 
 from radioVirgen.models import Reproduccion
@@ -8,13 +7,17 @@ from radioVirgen.models import Reproduccion
 class Command(BaseCommand):
     help = 'Buscar reproducciones de usuario por nick'
 
+    def add_arguments(self, parser):
+        parser.add_argument(
+            '--nick',
+            type=str,
+            help='Nick para buscar reproducciones',
+            required=True
+        )
+
     def handle(self, *args, **kwargs):
         try:
-            if not args:
-                self.stderr.write("Error: Debes proporcionar un nick.")
-                return
-
-            nick = args[0]
+            nick = kwargs['nick']
 
             try:
                 reproducciones = Reproduccion.objects.all()
@@ -34,7 +37,6 @@ class Command(BaseCommand):
             if not encontrado:
                 self.stdout.write(f"No se encontraron reproducciones para el usuario '{nick}'.")
 
-        except IndexError:
-            self.stderr.write("Error: No se proporcionó un argumento para el nick.")
+
         except Exception as e:
             self.stderr.write(f"Error inesperado: {e}")
